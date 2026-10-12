@@ -5,6 +5,8 @@ import Produit from "./pages/Produit.jsx";
 import Panier from "./pages/Panier.jsx";
 import Commande from "./pages/Commande.jsx";
 import ConfirmationCommande from "./pages/ConfirmationCommande.jsx";
+import QuiSommesNous from "./pages/QuiSommesNous.jsx";
+import MentionsLegales from "./pages/MentionsLegales.jsx";
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
       <Route path="/panier" element={<Panier />} />
       <Route path="/commande" element={<Commande />} />
       <Route path="/confirmation/:numero" element={<ConfirmationCommande />} />
+      <Route path="/qui-sommes-nous" element={<QuiSommesNous />} />
+      <Route path="/mentions-legales" element={<MentionsLegales />} />
     </Routes>
   );
 }

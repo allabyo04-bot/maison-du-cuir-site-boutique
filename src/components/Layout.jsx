@@ -91,6 +91,13 @@ export default function Layout({ children }) {
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 700, color: "#E3C46E", marginBottom: 10 }}>Livraison</p>
             <p style={{ fontSize: 14, lineHeight: 1.7 }}>Retrait en boutique ou livraison — choisissez le mode au moment de la commande. Vous serez contactée pour confirmer les détails.</p>
           </div>
+          <div>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 700, color: "#E3C46E", marginBottom: 10 }}>À propos</p>
+            <p style={{ fontSize: 14, lineHeight: 2 }}>
+              <Link to="/qui-sommes-nous">Qui sommes-nous</Link><br />
+              <Link to="/mentions-legales">Mentions légales & CGV</Link>
+            </p>
+          </div>
         </div>
         <div style={{ borderTop: "1px solid #3A2A20", textAlign: "center", padding: "16px", fontSize: 12, color: "#8A7A68" }}>
           Gestion Commerciale by Phil
