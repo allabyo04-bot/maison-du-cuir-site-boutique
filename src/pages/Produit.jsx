@@ -8,18 +8,19 @@ export default function Produit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [produit, setProduit] = useState(null);
-  const [erreur, setErreur] = useState("");
+  const [erreurChargement, setErreurChargement] = useState("");
+  const [erreurFormulaire, setErreurFormulaire] = useState("");
   const [photoActive, setPhotoActive] = useState(0);
   const [pointure, setPointure] = useState("");
   const [quantite, setQuantite] = useState(1);
   const [confirmation, setConfirmation] = useState(false);
 
   useEffect(() => {
-    setProduit(null); setErreur(""); setPhotoActive(0); setPointure(""); setQuantite(1); setConfirmation(false);
-    api.produit(id).then(setProduit).catch((e) => setErreur(e.message));
+    setProduit(null); setErreurChargement(""); setErreurFormulaire(""); setPhotoActive(0); setPointure(""); setQuantite(1); setConfirmation(false);
+    api.produit(id).then(setProduit).catch((e) => setErreurChargement(e.message));
   }, [id]);
 
-  if (erreur) return <Layout><div className="container" style={{ padding: 60, textAlign: "center" }}><p>{erreur}</p></div></Layout>;
+  if (erreurChargement) return <Layout><div className="container" style={{ padding: 60, textAlign: "center" }}><p>{erreurChargement}</p></div></Layout>;
   if (!produit) return <Layout><div className="container" style={{ padding: 60 }}><p style={{ color: "var(--texte-doux)" }}>Chargement…</p></div></Layout>;
 
   const pointuresPossibles = [...new Set(produit.pointuresDisponibles.filter((p) => p.pointure).map((p) => p.pointure))];
@@ -27,9 +28,9 @@ export default function Produit() {
   const photos = produit.photos?.length ? produit.photos : (produit.photoUrl ? [{ url: produit.photoUrl }] : []);
 
   const ajouter = () => {
-    if (besoinPointure && !pointure) { setErreur("Choisissez une pointure."); return; }
+    if (besoinPointure && !pointure) { setErreurFormulaire("Choisissez une pointure."); return; }
     ajouterAuPanier(produit, pointure || null, quantite);
-    setErreur(""); setConfirmation(true);
+    setErreurFormulaire(""); setConfirmation(true);
     setTimeout(() => setConfirmation(false), 2500);
   };
 
@@ -84,7 +85,7 @@ export default function Produit() {
               </div>
             </div>
 
-            {erreur && <p style={{ color: "var(--accent-clair)", fontSize: 14, marginBottom: 12 }}>{erreur}</p>}
+            {erreurFormulaire && <p style={{ color: "var(--accent-clair)", fontSize: 14, marginBottom: 12 }}>{erreurFormulaire}</p>}
             {confirmation && <p style={{ color: "var(--succes)", fontSize: 14, marginBottom: 12 }}>Ajouté au panier !</p>}
 
             <div style={{ display: "flex", gap: 12 }}>
