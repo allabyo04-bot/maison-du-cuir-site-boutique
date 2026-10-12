@@ -30,9 +30,9 @@ export default function Layout({ children }) {
       </div>
 
       <header style={{ background: "var(--noir)", borderBottom: "2px solid #8C3B2E" }}>
-        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 108, gap: 24 }}>
+        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 128, gap: 24 }}>
           <Link to="/" style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <img src={logo} alt="La Maison du Cuir by Anaïs" style={{ height: 80, width: "auto" }} />
+            <img src={logo} alt="La Maison du Cuir by Anaïs" style={{ height: 100, width: "auto" }} />
           </Link>
 
           <nav style={{ display: "none", gap: 32, fontSize: 15, letterSpacing: "0.04em" }} className="nav-desktop">
@@ -76,7 +76,7 @@ export default function Layout({ children }) {
       <footer style={{ background: "var(--noir)", color: "#D8CDBB", marginTop: 64 }}>
         <div className="container" style={{ padding: "48px 24px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 32 }}>
           <div>
-            <img src={logo} alt="La Maison du Cuir by Anaïs" style={{ height: 84, width: "auto", marginBottom: 12 }} />
+            <img src={logo} alt="La Maison du Cuir by Anaïs" style={{ height: 110, width: "auto", marginBottom: 12 }} />
             <p style={{ fontSize: 14, lineHeight: 1.6 }}>Chaussures et sacs en cuir, élégance et qualité.</p>
           </div>
           <div>
