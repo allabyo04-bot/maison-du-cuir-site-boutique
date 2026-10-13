@@ -100,7 +100,7 @@ export default function Layout({ children }) {
           </div>
         </div>
         <div style={{ borderTop: "1px solid #3A2A20", textAlign: "center", padding: "16px", fontSize: 12, color: "#8A7A68" }}>
-          Gestion Commerciale by Phil
+          La Maison du Cuir by Anaïs
         </div>
       </footer>
 
